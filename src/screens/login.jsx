@@ -221,7 +221,7 @@ export default function Login() {
 				</Backdrop>
 			</div>
 			<div className={classes.vectorArtContainer}>
-				{/* <img src="../assets/authentication-page-img.png" alt="" /> */}
+				<img src="../assets/authentication-page-img.png" alt="" />
 			</div>
 			<div className={classes.loginFormContainer}>
 				<div className={classes.formContainer}>

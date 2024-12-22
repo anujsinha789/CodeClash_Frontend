@@ -1,8 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import Navbar from "../../components/BootstrapNavbar/index"
+import Features from "./Feature"
 import clsx from "clsx";
 import "./style.css";
+import Testimonials from "./Testimonials";
 // import bgImg from "../assets/homepage_background.png";
 // import logo from "../assets/logo.png";
 
@@ -39,119 +42,12 @@ const useStyles = makeStyles((theme) => ({
 		width: "15%",
 		background: "transparent",
 	},
-	about: {
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		height: "50%",
-		width: "10%",
-		fontSize: "1.25rem",
-		fontWeight: "bold",
-		fontFamily: "consolas",
-		background: "transparent",
-		border: "none",
-		borderRadius: "50px",
-		"&:hover": {
-			cursor: "pointer",
-			background: "#42a5f5",
-			transition: "all 0.5s ease-in-out",
-		},
-	},
-	home: {
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		height: "50%",
-		width: "10%",
-		fontSize: "1.25rem",
-		fontWeight: "bold",
-		fontFamily: "consolas",
-		background: "transparent",
-		border: "none",
-		borderRadius: "50px",
-		"&:hover": {
-			cursor: "pointer",
-			background: "#42a5f5",
-			transition: "all 0.5s ease-in-out",
-		},
-	},
-	product: {
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		height: "50%",
-		width: "10%",
-		fontSize: "1.25rem",
-		fontWeight: "bold",
-		background: "transparent",
-		fontFamily: "consolas",
-		border: "none",
-		borderRadius: "50px",
-		"&:hover": {
-			cursor: "pointer",
-			background: "#42a5f5",
-			transition: "all 0.5s ease-in-out",
-		},
-	},
-	pricing: {
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		height: "50%",
-		width: "10%",
-		fontSize: "1.25rem",
-		fontWeight: "bold",
-		background: "transparent",
-		fontFamily: "consolas",
-		border: "none",
-		borderRadius: "50px",
-		"&:hover": {
-			cursor: "pointer",
-			background: "#42a5f5",
-			transition: "all 0.5s ease-in-out",
-		},
-	},
-	auth_btn_container: {
-		display: "flex",
-		justifyContent: "flex-end",
-		alignItems: "center",
-		height: "100%",
-		width: "30%",
-		background: "transparent",
-	},
-	login: {
-		display: "flex",
-		justifyContent: "flex-end",
-		alignItems: "center",
-		height: "100%",
-		width: "30%",
-		fontSize: "1.25rem",
-		fontWeight: "bold",
-		fontFamily: "consolas",
-		background: "none",
-	},
 	divider: {
 		height: "30%",
 		width: "0.5%",
 		background: "black",
 		borderRadius: "50px",
 		margin: "0.5rem",
-	},
-	signup: {
-		display: "flex",
-		justifyContent: "flex-start",
-		alignItems: "center",
-		height: "100%",
-		width: "30%",
-		fontSize: "1.25rem",
-		fontWeight: "bold",
-		fontFamily: "consolas",
-	},
-	container: {
-		display: "flex",
-		flexDirection: "column",
-		height: "90%",
-		width: "50%",
 	},
 	welcome_text_wrapper: {
 		display: "flex",
@@ -222,8 +118,10 @@ const useStyles = makeStyles((theme) => ({
 		fontFamily: "consolas",
 		fontSize: "1.25em",
 		borderRadius: "50px",
+		textDecoration : "none",
 		"&:hover": {
 			cursor: "pointer",
+			textDecoration : "none",
 			transition: "all 0.5s ease-in-out",
 		},
 	},
@@ -235,131 +133,30 @@ export default function Login() {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			<nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-				<div className="container-fluid">
-					<a className="navbar-brand" href="/">
-						Navbar
-					</a>
-					<button
-						className="navbar-toggler"
-						type="button"
-						data-bs-toggle="collapse"
-						data-bs-target="#navbarNavDropdown"
-						aria-controls="navbarNavDropdown"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
-					>
-						<span className="navbar-toggler-icon"></span>
-					</button>
-					<div className="collapse navbar-collapse" id="navbarNavDropdown">
-						<ul className="navbar-nav">
-							<li className="nav-item">
-								<a className="nav-link active" aria-current="page" href="/">
-									Home
-								</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="/">
-									Features
-								</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="/">
-									Pricing
-								</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="/login">
-									Login
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-			{/* <div className={classes.navbar}>
-				<div className={classes.tab_container}>
-					<span className={classes.logo}>
-						<img src={logo} alt="logo" height={140} />
-					</span>
-					<span className={classes.about}>
-						<Link to="/about">About</Link>
-					</span>
-					<span className={classes.home}>
-						<Link to="/home">Home</Link>
-					</span>
-					<span className={classes.product}>
-						<Link to="/product">Product</Link>
-					</span>
-					<span className={classes.pricing}>
-						<Link to="/pricing">Pricing</Link>
-					</span>
-				</div>
-				<div className={classes.auth_btn_container}>
-					<span className={classes.login}>
-						<Link to="/login">Login</Link>
-					</span>
-					<span className={classes.divider} />
-					<span className={classes.signup}>
-						<Link to="/signup">Signup</Link>
-					</span>
-				</div>
-			</div> */}
-			<div className="container-fluid banner welcome">
+			<Navbar />
+			<div className="container-fluid banner">
 				<div className={clsx("container-fluid", classes.welcome_text_wrapper)}>
 					<div className={classes.welcome_text_container}>
 						<span className={classes.welcome_text}>Welcome To</span>
-						<span className={classes.app_name}>ManageMyBucks!</span>
+						<span className={classes.app_name}>CodeClash!</span>
 					</div>
 					<div className={classes.description_text_container}>
 						<span className={classes.description_text}>
-							Manage all your finances at one place!
+							Compete, Code, Conquer
 						</span>
 					</div>
 					<div className={classes.get_started_btn_container}>
 						<Link to="/login">
-							<div className={classes.get_started_btn}>Get Started</div>
+							<div className={classes.get_started_btn}>Lets Compete!</div>
 						</Link>
 					</div>
 				</div>
 			</div>
-			<div className="container-fluid banner feat-1">
-				<div className={clsx("container-fluid", classes.welcome_text_wrapper)}>
-					<div className={classes.feat_1_text_container}>
-						<span className={classes.feat_1_text}>
-							Track and invest at Zero Commission!
-						</span>
-					</div>
-					<div className={classes.description_text_container}>
-						<span className={classes.description_text}>
-							Manage all your finances at one place!
-						</span>
-					</div>
-					<div className={classes.get_started_btn_container}>
-						<Link to="/login">
-							<div className={classes.get_started_btn}>Get Started</div>
-						</Link>
-					</div>
-				</div>
+			<div className="container-fluid banner">
+				<Features />
 			</div>
-			<div className="container-fluid banner feat-2">
-				<div className={clsx("container-fluid", classes.welcome_text_wrapper)}>
-					<div className={classes.feat_1_text_container}>
-						<span className={classes.feat_1_text}>
-							Track and invest at Zero Commission!
-						</span>
-					</div>
-					<div className={classes.description_text_container}>
-						<span className={classes.description_text}>
-							Manage all your finances at one place!
-						</span>
-					</div>
-					<div className={classes.get_started_btn_container}>
-						<Link to="/login">
-							<div className={classes.get_started_btn}>Get Started</div>
-						</Link>
-					</div>
-				</div>
+			<div className="container-fluid banner">
+				<Testimonials />
 			</div>
 		</div>
 	);

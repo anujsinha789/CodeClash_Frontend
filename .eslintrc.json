@@ -5,6 +5,9 @@
     ],
     "rules": {
         "no-unused-vars" : "warn",
+        "arrow-body-style" : "warn",
+        "react/no-unescaped-entities" : "warn",
+        "react/no-array-index-key" : "warn",
         "jsx-filename-extension" : "off",
         "import/no-unresolved" : "warn",
         "no-console" : "warn",

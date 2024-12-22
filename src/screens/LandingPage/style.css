@@ -14,3 +14,11 @@
     background-color: tomato;
 }
 
+.features-container , .testimonials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
